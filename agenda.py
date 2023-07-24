@@ -37,7 +37,7 @@ def salvarContato():
     telefone = input("Digite o telefone: ")
     email = input("Digite o email: ")
     try:
-        with open("agenda.txt", "a") as agenda:
+        with open("applocation.txt", "a") as agenda:
             dados = f'{nome};{telefone};{email}\n'
             agenda.write(dados)
         print(f'Contato Salvo com Sucesso!')
@@ -46,7 +46,7 @@ def salvarContato():
 
 def listarContato():
     try:
-        with open("agenda.txt", "r") as agenda:
+        with open("applocation.txt", "r") as agenda:
             print("LISTA DE CONTATOS:")
             for i, contato in enumerate(agenda, 1):
                 contato_formatado = contato.replace(";", " | ")
@@ -60,9 +60,9 @@ def listarContato():
 def deletarContato():
     nome_deletado = input("Digite o nome do contato: ").lower()
     try:
-        with open("agenda.txt", "r") as agenda:
+        with open("applocation.txt", "r") as agenda:
             contatos = agenda.readlines()
-        with open("agenda.txt", "w") as agenda:
+        with open("applocation.txt", "w") as agenda:
             for contato in contatos:
                 if nome_deletado not in contato.lower():
                     agenda.write(contato)
@@ -75,7 +75,7 @@ def deletarContato():
 def buscarContato():
     procura_nome = input("Digite o nome do contato: ").upper()
     try:
-        with open("agenda.txt", "r") as agenda:
+        with open("applocation.txt", "r") as agenda:
             for contato in agenda:
                 if procura_nome in contato.split(";")[0].upper():
                     print(contato)
@@ -87,16 +87,16 @@ def buscarContato():
 def atualizarContato():
     nome_atualizado = input("Digite o nome do contato: ").lower()
     try:
-        with open("agenda.txt", "r") as agenda:
+        with open("applocation.txt", "r") as agenda:
             contatos = agenda.readlines()
-        with open("agenda.txt", "w") as agenda:
+        with open("applocation.txt", "w") as agenda:
             for contato in contatos:
                 if nome_atualizado not in contato.lower():
                     agenda.write(contato)
         nome = input("Digite o novo nome: ")
         telefone = input("Digite o novo telefone: ")
         email = input("Digite o novo email: ")
-        with open("agenda.txt", "a") as agenda:
+        with open("applocation.txt", "a") as agenda:
             dados = f'{nome};{telefone};{email}\n'
             agenda.write(dados)
         print(f'Contato Atualizado com Sucesso!')

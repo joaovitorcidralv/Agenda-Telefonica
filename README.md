@@ -1,4 +1,4 @@
-# Agenda_Telefonica
+# AgendaTelefônica
 Agenda telefônica em python, um CRUD simples para adicionar números de telefones com nome e email.
 
 CRUD é uma sigla para aplicações funcionais em que o usuário pode realizar tarefas como cadastro, consulta, atualização(edição de informações) e exclusão. São pautadas no tratamento de dados.
